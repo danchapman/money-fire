@@ -19,3 +19,21 @@ body {
 *:after {
   box-sizing: inherit;
 }
+
+.vote-label{
+  padding: 20px;
+  width: 300px;
+}
+
+.form-control.vote-select {
+  margin-top: 10px;
+}
+
+.form-control.vote-button {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.ethereum-logo {
+  width: 450px;
+}

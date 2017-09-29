@@ -10,10 +10,13 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const Counter = require('./containers/CounterContainer').default
-      const reducer = require('./modules/counter').default
+      const candidates = require('./modules/counter').candidates
+      const voters = require('./modules/counter').voters
 
+      console.log(candidates);
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'counter', reducer })
+      injectReducer(store, { key: 'candidates', candidates })
+      injectReducer(store, { key: 'voters', voters })
 
       /*  Return getComponent   */
       cb(null, Counter)

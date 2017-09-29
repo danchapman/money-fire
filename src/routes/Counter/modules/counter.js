@@ -3,6 +3,9 @@
 // ------------------------------------
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT'
 export const COUNTER_DOUBLE_ASYNC = 'COUNTER_DOUBLE_ASYNC'
+export const SELECT_CANDIDATE = 'SELECT_CANDIDATE'
+export const SELECT_VOTER = 'SELECT_VOTER'
+export const VOTE_INCREMENT = 'VOTE_INCREMENT'
 
 // ------------------------------------
 // Actions
@@ -48,9 +51,55 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = 0
-export default function counterReducer (state = initialState, action) {
-  const handler = ACTION_HANDLERS[action.type]
+const initialState = {
+  candidates: {
+    'Bullet Train': {votes: 0},
+    'FLACK': {votes: 0},
+    'Wild Cats': {votes: 0},
+    'Solar Mules': {votes: 0},
+    'Autechre': {votes: 0},
+    'Money Fire': {votes: 0},
+    'Wonder Twins': {votes: 0},
+    'Jerrys Team': {votes: 0},
+    'Haos Team': {votes: 0},
+  },
 
-  return handler ? handler(state, action) : state
+  voters: {
+    'Niles': {voted: false},
+    'Chris': {voted: false},
+    'Jim': {voted: false},
+    'Amanda': {voted: false},
+    'Kevin': {voted: false},
+    'Chappy': {voted: false},
+    'Egan': {voted: false},
+    'Jerry': {voted: false},
+    'Alex': {voted: false},
+    'Krishan': {voted: false},
+    'Chuck': {voted: false},
+    'Paul': {voted: false},
+    'Richard': {voted: false},
+    'Elise': {voted: false},
+    'Todd': {voted: false},
+    'Scott': {voted: false},
+    'Taylor': {voted: false},
+    'Aimee': {voted: false},
+    'Lance': {voted: false},
+    'Hao': {voted: false},
+  }
 }
+
+function candidates(state = initialState, action) {
+  switch (action.type) {
+    default:
+      return state.candidates;
+  }
+}
+
+function voters(state = initialState, action) {
+  switch(action.type) {
+    default:
+      return state.voters;
+  }
+}
+
+export default {candidates, voters};
